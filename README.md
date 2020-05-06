@@ -61,7 +61,7 @@ if __name__ == "__main__":
 
 如您所见，在后三行中，基于ret方法的健壮性，该方法可以自动判定您传入的文本是一个字符串还是列表，并将返回值做相应调整
 
-> 提示：若您打印出的返回值为None，请您手动改变第四行、第八行中可选参数PATH_Model的绝对路径值。譬如您的Sparkle安装在了E:\\myhub\\wechat_predicting文件夹下，您只需要将这两行改为：*提示：*若您打印出的返回值为None，请您手动改变第四行、第八行中可选参数PATH_Model的绝对路径值。譬如您的Sparkle安装在了E:\\myhub\\wechat_predicting文件夹下，您只需要将这两行改为：
+> 提示：若您打印出的返回值为None，请您手动改变第四行、第八行中可选参数PATH_Model的绝对路径值。譬如您的Sparkle安装在了E:\\myhub\\wechat_predicting文件夹下，您只需要将这两行改为：
 ```
 result = Predict.ret(text, PATH_Model="E:\\myhub\\wechat_predicting\\Sparkle\\ModelLib\\train_model1.m")
 ```
@@ -70,7 +70,9 @@ result = Predict.ret(text, PATH_Model="E:\\myhub\\wechat_predicting\\Sparkle\\Mo
 ### 现在开始使用Sparkle(星火)（*样例2*）:
 
 Sparkle(星火)的强大之处在于，它可以对直接导出的QQ历史记录文件进行一键分析。下面的实例将让您简单了解这项功能
+
 首先，您需要进入QQ电脑版中“消息管理”模块，选择您要分析的聊天（可以是多人的群，也可以是一对一的聊天），右键点击“导出消息记录”，将“保存类型”设置为“文本文件”，即txt文件，选择路径和名称后，点击保存
+
 之后你需要在新的py文件中输入以下代码：
 ```
 from Sparkle import ExportResults
@@ -205,7 +207,7 @@ score  | float| 情感得分，取值为0至1之间的小数。**在调用之前
 
 TimeAnalysis类和PersonalAnalysis类是为解决分时分析而构造的。TimeAnalysis类描述的是某一个用户在某一时段所有Message的集合。PersonalAnalysis类是某一用户全体TimeAnalysis实例的集合
 
-首先向为介绍TimeAnalysis类
+首先为您介绍TimeAnalysis类
 
 属性名称  | 类型| 介绍
 ------------- | -------------| -------------
@@ -220,7 +222,7 @@ score  | float| 情感得分，取值为0至1之间的小数。**在调用之前
 | ` Append(self,message)`   | 向本MessageList中追加一条Message     |
 | `set_score(self)`   | **遍历MessageList，根据平均得分设置score**     |
 
-最后向您介绍PersonalAnalysis类
+最后为您介绍PersonalAnalysis类
 
 属性名称  | 类型| 介绍
 ------------- | -------------| -------------
@@ -237,6 +239,7 @@ timeanalysislist  | list| list容器，内含一组与本PersonalAnalysis实例�
 
 ### Predict.ret(text,PATH_Model):
 **说明**
+
 ret函数可以帮助您对某一个中文语句用您指定的模型进行情感分析
 
 **参数**
@@ -253,6 +256,7 @@ tl  | int| 判定的返回值，为1或0
 
 ### Predict.QQget_res(PATH_Data,PATH_Model):
 **说明**
+
 QQget_res函数可以帮助您对某一个已导出的QQ聊天记录用您指定的模型进行情感分析
 
 **参数**
@@ -269,6 +273,7 @@ me  | list| 一个由一组MessageSet组成的列表
 
 ### ExportResult.Export(PATH_Data,PATH_Model,to_cmd=True,to_txt=False,Filename="myResult"):
 **说明**
+
 ExportResult.Export函数可以帮助您对某一个已导出的QQ聊天记录用您指定的模型进行情感分析并快速导出
 
 **参数**
@@ -289,6 +294,7 @@ a  | list| 一个由一组MessageSet组成的列表，与ExportResult.Export方�
 
 ### Data_Standardization.get_set(PATH_Data):
 **说明**
+
 Data_Standardization.get_set参数可以帮助您将一个您指定路径的QQ历史记录转化为一个包含一组MessageSet的列表并返回
 
 **参数**
@@ -306,19 +312,31 @@ res  | list| 一个由一组MessageSet组成的列表，**其score值还未被�
 ## 下一步做什么？
 
 在前面的章节中，您已经掌握了Sparkle(星火)的具体操作方法，可以编写更为完整的程序了。
+
 您可以将Sparkle(星火)与itchat联合使用，完成对微信聊天的实时情感监控
+
 您也可以将Sparkle(星火)与酷Q联合使用，完成对QQ聊天的实时情感监控
+
 您也可以将Sparkle(星火)嵌入您的爬虫，分析大众点评、微博等社交软件的情感走势
 
 ## 作者附：
+
 There is a sparkle in your eyes。
+
 在过去的数年，我国抑郁症患者人数持续增长。现如今，有权威组织预测我国抑郁症患者人数已经接近9000万。如果不加干预，在未来的数年之内，我国抑郁症患者人数可能破亿。更有报告指出，我国大学生群体中，抑郁症患病率接近29%。
-Sparkle(星火)开发的初衷之一，是完成一款易于上手的社交媒体情感分析包，使心理工作者/学生工作者可以快速搭建一款职工/大学生心理安全检测系统。在浩如烟海的社交网络中，寻找那些需要被关注的人，为心理工作者/学生工作者提供预警线与干预线。打破痛苦的沉寂，提供一星温暖的光明。
+
+Sparkle(星火)开发的初衷之一，是完成一款易于上手的社交媒体情感分析包，使心理工作者/学生工作者可以快速搭建一款职工/大学生心理安全检测系统。在浩如烟海的社交网络中，寻找那些需要被关注的人，为心理工作者/学生工作者提供预警线与干预线。打破痛苦的沉寂，提供一星温暖的光明
+。
 根据与一些心理专家的交流，我们在此提供一些建议：
+
 预警线：当使用系统自带模型train_model1分析出某一成员在60天内情感分析值均低于0.5，判定该成员的心情长时间不佳，有转向轻度抑郁症的风险，请心理工作者/学生工作者留意这名成员平时的行为举止。若观察该成员平时的行为举止符合轻度抑郁症的特征，请心理工作者/学生工作者进行干预。
+
 干预线：当使用系统自带模型train_model1分析出某一成员在14天内情感分析值均低于0.35，判定该成员的心情短时间内出现明显低落，有已经成为轻度抑郁症的可能。请心理工作者/学生工作者留意这名成员平时的行为举止，在必要时进行干预。
+
 不过，在社交网络中寻找需要关注的群体，帮助其倾诉，并帮助缓解抑郁问题，对于抑郁症人群来说也可以算是Sparkle(闪耀)了。
+
 愿世间充满爱，愿每个人都能关注抑郁症群体。
 
 ***Sparkle,break the silence and light up the darkness***
+
 <br>*Signed-off-by: 遥梦幽兰kzx <kjx336@163.com>*
